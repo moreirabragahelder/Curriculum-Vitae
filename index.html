@@ -1,4 +1,15 @@
-            <div class="profile-img">
+        .skill-category p {
+            text-align: justify;
+            line-height: 1.6;
+        }        .education-item p, .experience-item p {
+            text-align: justify;
+            line-height: 1.6;
+        }        .contact-item span {
+            flex: 1;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }            <div class="profile-img">
                 <i class="fas fa-user"></i>
             </div><!DOCTYPE html>
 <html lang="pt-BR">
@@ -107,6 +118,8 @@
             border-radius: 10px;
             transition: all 0.3s ease;
             cursor: pointer;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .contact-item:hover {
@@ -176,6 +189,7 @@
             border-radius: 0 15px 15px 0;
             transition: all 0.3s ease;
             position: relative;
+            text-align: justify;
         }
 
         .education-item:hover, .experience-item:hover {
@@ -221,6 +235,7 @@
             padding: 20px;
             border-radius: 15px;
             transition: transform 0.3s ease;
+            text-align: justify;
         }
 
         .skill-category:hover {
@@ -397,10 +412,6 @@
                     <i class="fas fa-phone"></i>
                     <span>11941960502</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Osasco, SP</span>
-                </div>
                 <div class="contact-item" onclick="window.open('https://linkedin.com/in/helder-moreira-braga', '_blank')">
                     <i class="fab fa-linkedin"></i>
                     <span>helder-moreira-braga</span>
@@ -408,6 +419,10 @@
                 <div class="contact-item" onclick="window.open('https://github.com/moreirabragahelder', '_blank')">
                     <i class="fab fa-github"></i>
                     <span>moreirabragahelder</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Osasco, SP</span>
                 </div>
             </div>
         </header>
