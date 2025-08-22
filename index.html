@@ -296,6 +296,19 @@
             transform: translateX(5px);
         }
 
+        .publications-list li[onclick]:hover {
+            background: rgba(30, 58, 138, 0.15);
+            transform: translateX(8px);
+            box-shadow: 0 3px 10px rgba(30, 58, 138, 0.2);
+        }
+
+        .publications-list li[onclick]::after {
+            content: " 🔗";
+            color: #1e3a8a;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
         .floating-elements {
             position: fixed;
             top: 0;
@@ -564,8 +577,8 @@
                 Publicações
             </h2>
             <ul class="publications-list">
-                <li><strong>2020</strong> - J. Phys. Chem. C 2020, 124, 52, 28580–28588, DOI: 10.1021/acs.jpcc.0c09573</li>
-                <li><strong>2020</strong> - Langmuir 2020, 36, 19, 5408–5416, DOI: 10.1021/acs.langmuir.9b03871</li>
+                <li onclick="window.open('https://pubs.acs.org/doi/abs/10.1021/acs.jpcc.0c09573', '_blank')" style="cursor: pointer;"><strong>2020</strong> - J. Phys. Chem. C 2020, 124, 52, 28580–28588, DOI: 10.1021/acs.jpcc.0c09573</li>
+                <li onclick="window.open('https://pubs.acs.org/doi/abs/10.1021/acs.langmuir.9b03871', '_blank')" style="cursor: pointer;"><strong>2020</strong> - Langmuir 2020, 36, 19, 5408–5416, DOI: 10.1021/acs.langmuir.9b03871</li>
                 <li><strong>2022</strong> - Braga, H. M., Tofanello, A., & Souza, J. A. (2022). Thermal annealing effect on CsPbBr3 and dielectric protected CsPbBr3@SiOx perovskites nanocrystals</li>
                 <li><strong>2020</strong> - Synthesis, morphological, and structural properties of nanostructures of TiO2 / ZrO2 on the surface of microwires. 17. Brazilian MRS meeting, Natal, RN</li>
             </ul>
