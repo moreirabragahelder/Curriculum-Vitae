@@ -1,0 +1,637 @@
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helder Moreira Braga - Currículo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cv-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideDown 1s ease-out;
+        }
+
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-img {
+            display: none;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(30, 58, 138, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            background: rgba(30, 58, 138, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-item i {
+            color: #1e3a8a;
+            font-size: 1.2rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
+        .section:nth-child(6) { animation-delay: 1s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #1e3a8a;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #1e3a8a;
+            font-size: 1.5rem;
+        }
+
+        .profile-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .education-item, .experience-item {
+            padding: 20px;
+            border-left: 4px solid #1e3a8a;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(30, 64, 175, 0.05));
+            border-radius: 0 15px 15px 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .education-item:hover, .experience-item:hover {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(30, 64, 175, 0.1));
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .degree, .position {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .institution, .company {
+            color: #1e3a8a;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .location-date {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location-date i {
+            color: #1e3a8a;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(30, 64, 175, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3 i {
+            color: #1e3a8a;
+        }
+
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .language-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .publications-list, .presentations-list {
+            list-style: none;
+        }
+
+        .publications-list li, .presentations-list li {
+            padding: 15px;
+            background: rgba(30, 58, 138, 0.05);
+            margin-bottom: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .publications-list li:hover, .presentations-list li:hover {
+            background: rgba(30, 58, 138, 0.1);
+            transform: translateX(5px);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(30, 58, 138, 0.1), transparent);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-elements::before {
+            top: 10%;
+            right: 10%;
+            animation-delay: -3s;
+        }
+
+        .floating-elements::after {
+            bottom: 10%;
+            left: 10%;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .cv-header {
+                padding: 20px;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .floating-elements,
+            .print-btn {
+                display: none;
+            }
+            
+            .cv-header,
+            .section {
+                background: white;
+                box-shadow: none;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements"></div>
+    
+    <div class="container">
+        <header class="cv-header">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1 class="name">Helder Moreira Braga</h1>
+            <p class="title">Físico</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>heldermb2@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>11941960502</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Osasco, SP</span>
+                </div>
+                <div class="contact-item" onclick="window.open('https://linkedin.com/in/helder-moreira-braga', '_blank')">
+                    <i class="fab fa-linkedin"></i>
+                    <span>helder-moreira-braga</span>
+                </div>
+                <div class="contact-item" onclick="window.open('https://github.com/moreirabragahelder', '_blank')">
+                    <i class="fab fa-github"></i>
+                    <span>moreirabragahelder</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-user-graduate"></i>
+                Perfil Pessoal
+            </h2>
+            <p class="profile-text">
+                Físico com sólida formação acadêmica, incluindo doutorado em Nanociências e Materiais Avançados, mestrado e licenciatura em Física. Além disso, atualmente, ampliando sua experiência e conhecimento na área de tecnologia, com foco em ciência de dados, aprendizado de máquina e inteligência artificial. Possui perfil proativo, forte aptidão analítica para a solução de problemas complexos e habilidade na interpretação e processamento de dados. Além disso, destaca-se pela comunicação eficaz e trabalho colaborativo.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-university"></i>
+                Formação
+            </h2>
+            
+            <div class="education-item">
+                <div class="degree">Doutorado em Nanociências e Materiais Avançados</div>
+                <div class="institution">Universidade Federal do ABC (UFABC)</div>
+                <div class="location-date">
+                    <span><i class="fas fa-map-marker-alt"></i> Santo André, SP</span>
+                    <span><i class="fas fa-calendar"></i> 2024</span>
+                </div>
+                <p>Durante o doutorado, desenvolveu capacidade analítica e resolução de problemas ao aprofundar seus conhecimentos em Física e Química de materiais, focando na funcionalização e aplicação de nanomateriais semicondutores, com ênfase na engenharia de interfaces da camada ativa de células solares de perovskita por meio da incorporação de quantum dots. Além disso, colaborou com o grupo de pesquisquisa em que estava inserido aumentando o potencial de organização e automação de processos, ao implementar pipelines para o processamento e análise de dados da pesquisa, utilizando Python e a biblioteca Pandas. Demonstrou habilidade em análise estatística e visualização de dados, aplicando ferramentas como Matplotlib, NumPy e Seaborn para interpretar informações de forma clara e eficiente. Essa experiência reforçou sua adaptabilidade e aprendizado contínuo, permitindo a integração de conhecimentos em ciência de dados e machine learning para otimização de materiais avançados.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Mestrado em Física</div>
+                <div class="institution">Universidade Federal do ABC (UFABC)</div>
+                <div class="location-date">
+                    <span><i class="fas fa-map-marker-alt"></i> Santo André, SP</span>
+                    <span><i class="fas fa-calendar"></i> 2020</span>
+                </div>
+                <p>No mestrado, criou estratégias de pesquisa e metodologias para a otimização, funcionalização e aplicação de nanomateriais semicondutores, principalmente para geração de energia limpa. Além disso, aprimorou sua habilidade de criatividade e inovação ao explorar novas abordagens para melhorar as propriedades desses materiais. A experiência também envolveu gestão de projetos e organização, planejando e conduzindo experimentos para alcançar melhores desempenhos. Além disso, aperfeiçoou seu potencial de colaboração com outros pesquisadores de diferentes áreas, desenvolvendo a capacidade de trabalho em equipe e comunicação interdisciplinar.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Graduação em Licenciatura em Física</div>
+                <div class="institution">Universidade Federal do Espírito Santo (UFES)</div>
+                <div class="location-date">
+                    <span><i class="fas fa-map-marker-alt"></i> Alegre, ES</span>
+                    <span><i class="fas fa-calendar"></i> 2018</span>
+                </div>
+                <p>Por mais de dois anos foi integrante do Programa Institucional de Bolsa de Iniciação à Docência (PIBID), fomentado pela Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES). Também durante a graduação, atuou como monitor voluntário nos laboratórios de Física I e Física II. O estágio obrigatório para a conclusão do curso de Licenciatura em Física, foi realizado no Instituto Federal do Espírito Santo - Campus de Alegre. No trabalho de Conclusão de Curso, foi construído um plano inclinado automatizado, utilizando um microcontrolador Arduino e um conjunto de sensores de infravermelho, com propósito de obter a dinâmica do corpo no plano, em tempo real, tendo como aplicação e público alvo, alunos de ensino médio e graduação.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-building"></i>
+                Experiências Profissionais
+            </h2>
+            
+            <div class="experience-item">
+                <div class="position">Professor de Física e Matemática</div>
+                <div class="company">Colégio Piaso</div>
+                <div class="location-date">
+                    <span><i class="fas fa-map-marker-alt"></i> Diadema, SP</span>
+                    <span><i class="fas fa-calendar"></i> 2024 – 2025</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="position">Professor de Física e Química</div>
+                <div class="company">Colégio Methodus</div>
+                <div class="location-date">
+                    <span><i class="fas fa-map-marker-alt"></i> São Bernardo do Campo, SP</span>
+                    <span><i class="fas fa-calendar"></i> 2024 – 2025</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="position">Projetos Pessoais - Ciência de Dados, Machine Learning e IA</div>
+                <div class="company">Trabalho Atual</div>
+                <div class="location-date">
+                    <span><i class="fas fa-map-marker-alt"></i> Santo André, SP</span>
+                    <span><i class="fas fa-calendar"></i> 2025</span>
+                </div>
+                <p>Atualmente, atua no desenvolvimento de projetos voltados à consolidação de competências em Machine Learning, com ênfase na implementação de modelos supervisionados, como Random Forest, Regressão Logística e Árvores de Decisão.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-tools"></i>
+                Habilidades
+            </h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning e IA</h3>
+                    <p>Adquirindo experiência com modelos de classificação (ex: Random Forest, Regressão Logística, Árvores de Decisão) utilizando Scikit-learn.</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Análise e Visualização de Dados</h3>
+                    <p>Manipulação e tratamento de dados com Pandas e NumPy; visualizações interativas com Matplotlib e Seaborn. Desenvolvimento de dashboards e relatórios automatizados.</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-flask"></i> Pesquisa Científica</h3>
+                    <p>Experiência em projetos interdisciplinares na área de nanomateriais e dispositivos fotovoltaicos. Síntese, caracterização de semicondutores e análise de dados experimentais.</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Ferramentas e Tecnologias</h3>
+                    <p>Python, Jupyter Notebook, Google Colab, LaTeX, Git/GitHub e Anaconda. Aprimorando os conhecimentos em engenharia de prompt e aplicações com IA generativa.</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-presentation"></i> Comunicação Científica</h3>
+                    <p>Escrita de artigos científicos, relatórios e apresentações acadêmicas. Experiência em comunicação de resultados técnicos para públicos diversos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-globe"></i>
+                Idiomas
+            </h2>
+            <div class="languages">
+                <div class="language-item">Inglês - Intermediário Avançado</div>
+                <div class="language-item">Espanhol - Básico</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Publicações
+            </h2>
+            <ul class="publications-list">
+                <li><strong>2020</strong> - J. Phys. Chem. C 2020, 124, 52, 28580–28588, DOI: 10.1021/acs.jpcc.0c09573</li>
+                <li><strong>2020</strong> - Langmuir 2020, 36, 19, 5408–5416, DOI: 10.1021/acs.langmuir.9b03871</li>
+                <li><strong>2022</strong> - Braga, H. M., Tofanello, A., & Souza, J. A. (2022). Thermal annealing effect on CsPbBr3 and dielectric protected CsPbBr3@SiOx perovskites nanocrystals</li>
+                <li><strong>2020</strong> - Synthesis, morphological, and structural properties of nanostructures of TiO2 / ZrO2 on the surface of microwires. 17. Brazilian MRS meeting, Natal, RN</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-chalkboard-teacher"></i>
+                Apresentações
+            </h2>
+            <ul class="presentations-list">
+                <li><strong>2023</strong> - "CsPbBr3 QDs Changing the Morphology and Structure of MAPbI3 Films for Perovskite Solar Cells", at: XXI B-MRS Meeting em Maceió-AL, Out. 2023.</li>
+            </ul>
+        </section>
+    </div>
+
+    <button class="print-btn" onclick="window.print()" title="Imprimir currículo">
+        <i class="fas fa-print"></i>
+    </button>
+
+    <script>
+        // Adiciona efeito de hover suave aos itens clicáveis
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Animação de entrada para elementos quando ficam visíveis
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observa todas as seções
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Efeito de clique suave
+        document.addEventListener('click', function(e) {
+            const clickEffect = document.createElement('div');
+            clickEffect.style.position = 'fixed';
+            clickEffect.style.left = e.clientX + 'px';
+            clickEffect.style.top = e.clientY + 'px';
+            clickEffect.style.width = '20px';
+            clickEffect.style.height = '20px';
+            clickEffect.style.background = 'radial-gradient(circle, rgba(30, 58, 138, 0.6), transparent)';
+            clickEffect.style.borderRadius = '50%';
+            clickEffect.style.transform = 'scale(0)';
+            clickEffect.style.animation = 'clickRipple 0.6s ease-out';
+            clickEffect.style.pointerEvents = 'none';
+            clickEffect.style.zIndex = '9999';
+            
+            document.body.appendChild(clickEffect);
+            
+            setTimeout(() => {
+                clickEffect.remove();
+            }, 600);
+        });
+
+        // Adiciona a animação do efeito de clique
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes clickRipple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
